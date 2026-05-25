@@ -409,7 +409,7 @@ Push to `main` → GitHub Actions builds → Firebase Hosting deploys → live U
 | ✅ **Firebase** | Auth (Google Sign-In), Firestore (progress + leaderboard), Storage (avatars), Hosting (live URL), Cloud Functions (secure Gemini calls), Analytics |
 | ✅ **Real-World Problem** | ML education drop-off — 80%+ quit rate in existing courses |
 | ✅ **Functional Prototype** | Complete game loop: sign in → world map → story → flashcards → battle → code → XP → leaderboard |
-| ✅ **Live Deployment Link** | [geminiquest.web.app](https://geminiquest.web.app) — accessible instantly, no install needed |
+| ✅ **Live Deployment Link** | [geminiquest.web.app](https://gemini-ml-quest.onrender.com) — accessible instantly, no install needed |
 | ✅ **Innovation** | First browser RPG where Gemini simultaneously acts as game master, live tutor, and code evaluator |
 | ✅ **Beginner Friendly** | Zero ML background required — Gemini adapts to each player's level in real time |
 
