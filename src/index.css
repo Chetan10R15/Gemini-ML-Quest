@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Exo 2", sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  --font-story: "Exo 2", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  
+  --animate-holo-pulse: holo-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes holo-pulse {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
+    }
+    50% {
+      opacity: 0.8;
+      text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --bg-deep:     #050b14;   /* cyber black */
+    --bg-panel:    rgba(15, 23, 42, 0.7); /* glass slate */
+    --bg-border:   #0ea5e9;   /* neon blue */
+    --primary:     #22d3ee;   /* neon cyan */
+    --primary-glow: #22d3ee80; /* cyan glow */
+    --gold:        #f472b6;   /* hot pink items */
+    --oracle:      #c084fc;   /* neon purple */
+    --danger:      #f43f5e;   /* neon red */
+    --hp-bar:      #10b981;   /* neon green */
+    --mp-bar:      #3b82f6;   /* neon blue */
+    --monster-hp:  #f43f5e;   
+    --text-primary:#f8fafc;   /* white-ish */
+    --text-muted:  #94a3b8;   
+  }
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  background-image: 
+    linear-gradient(rgba(14, 165, 233, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+@layer components {
+  .panel-brutal {
+    @apply bg-slate-900/80 backdrop-blur-md border border-[var(--bg-border)] shadow-[0_0_15px_rgba(14,165,233,0.3)] text-[var(--text-primary)] rounded-xl relative overflow-hidden;
+  }
+  .panel-rpg {
+    @apply bg-slate-900/80 backdrop-blur-md border border-[var(--bg-border)] shadow-[0_0_15px_rgba(14,165,233,0.3)] text-[var(--text-primary)] rounded-lg relative overflow-hidden;
+  }
+  .panel-rpg::before {
+    content: "";
+    @apply absolute inset-0 opacity-20 pointer-events-none bg-gradient-to-br from-white/10 to-transparent;
+  }
+  .panel-brutal::before {
+    content: "";
+    @apply absolute inset-0 opacity-20 pointer-events-none bg-gradient-to-br from-white/10 to-transparent;
+  }
+  .btn-rpg {
+    @apply bg-slate-800/80 border border-[var(--bg-border)] font-display font-medium uppercase tracking-wider text-[var(--text-primary)] hover:bg-[#0ea5e9]/20 transition-all shadow-[0_0_10px_rgba(14,165,233,0.2)] hover:shadow-[0_0_20px_rgba(14,165,233,0.6)] active:scale-95;
+  }
+}
+
